@@ -1,16 +1,16 @@
 =====
-graphql_user
+*Django Graphql User*
 =====
 
-graphql_user is a Django app, which is independent and can be implemented into any Django project.
-it provides the Custom User and also provide the crud functionality, Also provides authentication with JWT in with 
-functionality to customize the payload.
-Detailed documentation is in the "docs" directory.
+**graphql_user is a Django app, which is independent and can be implemented into any Django project.**
+**it provides the Custom User and also provide the crud functionality, Also provides authentication with JWT in with **
+**functionality to customize the payload.**
+**Detailed documentation is in the "docs" directory.**
 
-Quick start
+``Quick start``
 -----------
 
-1. Add "graphql_user" to your INSTALLED_APPS setting like this::
+- 1. Add "graphql_user" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...,
@@ -21,20 +21,20 @@ Quick start
         "graphql_user",
     ]
 
-2. Add the setting for the graphene and graphql_jwt in the settings.py
+- 2. Add the setting for the graphene and graphql_jwt in the settings.py
 
 
     ``Defining the auth user model``
 
     AUTH_USER_MODEL = 'graphql_user.User'
 
-    ``Adding the jwt auth backend for grapghql jwt authentication.```
+    ``Adding the jwt auth backend for grapghql jwt authentication.``
     AUTHENTICATION_BACKENDS = [
         "graphql_jwt.backends.JSONWebTokenBackend",
         "django.contrib.auth.backends.ModelBackend",
     ]
     
-    ``Graphene settings ref: https://docs.graphene-python.org/projects/django/en/latest/settings/ ``
+    ``Graphene settings ref: https://docs.graphene-python.org/projects/django/en/latest/settings/``
     GRAPHENE = {
         "SCHEMA": "user.schema.schema",
         "MIDDLEWARE": [
@@ -42,7 +42,7 @@ Quick start
         ],
     }
 
-    ``Graphql_jwt settings ref: https://django-graphql-jwt.domake.io/settings.html ``
+    ``Graphql_jwt settings ref: https://django-graphql-jwt.domake.io/settings.html``
     GRAPHQL_JWT = {
         "JWT_ALLOW_ARGUMENT": True,
         "JWT_PAYLOAD_HANDLER": "user.utils.jwt_payload",
@@ -57,9 +57,6 @@ Include the graphql_user URLconf in your project urls.py like this::
 
     path("graphql_user/", include("graphql_user.urls")),
 
-3. Run ``python manage.py migrate`` to create the graphql_user models.
+-3. Run ``python manage.py migrate`` to create the graphql_user models.
 
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. Visit http://127.0.0.1:8000/graphql_user/ to participate in the poll.
+-4. Visit http://127.0.0.1:8000/graphql_user/ to participate in the poll.

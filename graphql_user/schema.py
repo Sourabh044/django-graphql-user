@@ -2,12 +2,13 @@ import graphene
 from graphene_django import DjangoObjectType 
 from graphene_django.filter import DjangoFilterConnectionField
 from graphene_django.rest_framework.mutation import SerializerMutation
-from .models import *
+from django.contrib.auth import get_user_model
 from .serializers import UserCreateSerializer , UserUpdateSerializer
 from graphene_django.types import ErrorType
 from graphql_jwt.decorators import login_required , superuser_required
 import graphql_jwt 
 
+User = get_user_model()
 
 class UserType(DjangoObjectType):
     '''

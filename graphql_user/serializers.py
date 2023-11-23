@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from .models import User
 import traceback
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 class UserCreateSerializer(serializers.ModelSerializer):
     
     def save(self, **kwargs):
