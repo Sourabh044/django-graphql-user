@@ -2,9 +2,9 @@
 graphql_user
 =====
 
-graphql_user is a Django app to conduct web-based graphql_user. For each question,
-visitors can choose between a fixed number of answers.
-
+graphql_user is a Django app, which is independent and can be implemented into any Django project.
+it provides the Custom User and also provide the crud functionality, Also provides authentication with JWT in with 
+functionality to customize the payload.
 Detailed documentation is in the "docs" directory.
 
 Quick start
